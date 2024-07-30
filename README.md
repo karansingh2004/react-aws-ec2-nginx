@@ -97,6 +97,8 @@ sudo rm -rf default
 
   ```bash
   sudo ln -s /etc/nginx/sites-available/<nginx-file-name> /etc/nginx/sites-enabled/
+
+  sudo gpasswd -a www-data ubuntu
   ```
 ### Step 8: Start the Application
 - Restart Nginx and allow the changes to take place.
