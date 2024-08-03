@@ -96,7 +96,7 @@ sudo rm -rf default
 - Activate the configuration using the following command:
 
   ```bash
-  sudo ln -s /etc/nginx/sites-available/<nginx-file-name> /etc/nginx/sites-enabled/
+  sudo ln -s /etc/nginx/sites-available/<nginx-file-name>.conf /etc/nginx/sites-enabled/
 
   sudo gpasswd -a www-data ubuntu
   ```
@@ -106,7 +106,19 @@ sudo rm -rf default
   sudo systemctl restart nginx
   sudo service nginx restart
   ```
-- Additionally, in case of errors, you can check error logs and status.
+- Additionally, in case of errors,
+  ```bash
+  sudo rm /etc/nginx/sites-enabled/<file-name>
+  sudo ln -s /etc/nginx/sites-available/react.conf /etc/nginx/sites-enabled/react.conf
+  sudo nginx -t
+  sudo systemctl start nginx
+
+
+
+  ```
+
+ you can check error logs and status.
+- 
 ### Step 9: Domain and SSL setup
 **Domain**
 
